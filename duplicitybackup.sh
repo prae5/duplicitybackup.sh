@@ -22,6 +22,12 @@
  *  It provivides an easy mechanism for creating, backingup, restoring,
  *  deleting and uploading encrypted backups using duplicity and ncftp
  *
+ *  Project     : duplicitybackup.sh
+ *  Git Repo    : https://github.com/prae5/duplicitybackup.sh
+ *  Project Site: http://www.paulrae.com/category/coding/duplicitybackup/
+ *  Author      : Paul Rae
+ *  Email       : paul@paulrae.com
+ *  Website     : www.paulrae.com
  */
 '
 
@@ -202,7 +208,9 @@ else
   To run this hourly, add the following cronjob:
   @hourly /path/to/script/backup-scripts/duplicitybackup.sh backup
 
-  Further details and usage examplese at: wwww.paulrae.com
+  Further details and usage examplese at: 
+      https://github.com/prae5/duplicitybackup.sh
+      http://www.paulrae.com/category/coding/duplicitybackup/
   Contact Paul Rae - paul@paurlae.com
   "
 fi
