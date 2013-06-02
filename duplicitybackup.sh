@@ -46,7 +46,6 @@ LOGFILE=/tmp/duplicity.log
 ########################################################
 ## BASE CONFIG OPTIONAL OPTIONS                       ##
 ## Set EMAIL to recieve backup error reports          ##
-## Set LOGFILE location                               ##
 ########################################################
 EMAIL=
 
