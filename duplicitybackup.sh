@@ -62,6 +62,7 @@ BACKUP_EXCLUDES=""
 ########################################################
 ## DO NOT CHANGE ANYTHING BELOW THIS LINE             ##
 ########################################################
+source ./myvars
 
 ########################################################
 ## DUPLICITY VARS                                     ##
@@ -97,7 +98,13 @@ echo created $FTP_FOLDER on ftp://$FTP_SERVER
 # duplicity backup
 # creates full backup if older than 30 days, else does incremental backup
 backup() {
-  duplicity --full-if-older-than 30D $BACKUP_LOCATIONS $BACKUP_EXCLUDES $DUP_ARCHIVE > $LOGFILE
+  INCLUDE=""
+  for CDIR in $BACKUP_LOCATIONS; do
+    TMP=" --include  ${CDIR}"
+    INCLUDE=${INCLUDE}${TMP}
+  done 
+
+  duplicity --full-if-older-than 30D $INCLUDE --exclude '**' / $BACKUP_EXCLUDES $DUP_ARCHIVE > $LOGFILE
 
   if [ -n "$EMAIL" ]; then
     if grep -q "Errors 0" "$LOGFILE"; then
